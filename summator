@@ -1,0 +1,38 @@
+#include <iostream>
+#include <bitset>
+using namespace std;
+
+string gg(int num) {
+    if (num == 0) {
+        return "0";
+    }
+    string binary = "";
+    while (num != 0) {
+        binary = (num % 2 == 0 ? "0" : "1") + binary;
+        num /= 2;
+    }
+    return binary;
+}
+
+void main() {
+    int n1, n2;
+    setlocale(0, "");
+
+    cout << "Введите два числа для суммирования: ";
+    cin >> n1 >> n2;
+
+    int sum = n1 + n2;
+
+    string binarySum = gg(sum);
+    cout << "Сумма чисел: " << sum << endl;
+
+    if (sum >= 0) {
+        cout << "Знак: Положительное" << endl;
+    }
+    else {
+        cout << "Знак: Отрицательное" << endl;
+    }
+
+    cout << "Двоичное представление суммы: " << binarySum << endl;
+    
+}
